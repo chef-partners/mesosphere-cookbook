@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: dcos
+# Cookbook:: dcos
 # Recipe:: default
 #
-# Copyright 2018, Chef Software, Inc.
+# Copyright:: 2018, Chef Software, Inc.
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -18,10 +18,10 @@
 #
 
 resource_name :dcos_user
+unified_mode true
+provides :dcos_user
 
 property :zk_host, String,
-         default: 'zk-1.zk:2181,zk-2.zk:2181,zk-3.zk:2181,zk-4.zk:2181,'\
-                  'zk-5.zk:2181',
          required: true
 property :email, String, required: false
 

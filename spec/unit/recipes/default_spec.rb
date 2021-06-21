@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: dcos
+# Cookbook:: dcos
 # Spec:: default
 #
 
@@ -8,7 +8,7 @@ require 'spec_helper'
 describe 'dcos::default' do
   context 'Default behavior, assume eth0' do
     let(:chef_run) do
-      ChefSpec::SoloRunner.new(platform: 'centos', version: '7.3.1611') do |node|
+      ChefSpec::SoloRunner.new(platform: 'centos', version: '7') do |node|
         node.override['network']['interfaces']['eth0']['addresses'] =
           {
             '1.2.3.4' =>
@@ -104,7 +104,7 @@ describe 'dcos::default' do
 
   context 'DC/OS Enterprise 1.11' do
     let(:chef_run) do
-      ChefSpec::SoloRunner.new(platform: 'centos', version: '7.3.1611') do |node|
+      ChefSpec::SoloRunner.new(platform: 'centos', version: '7') do |node|
         node.override['dcos']['dcos_enterprise'] = true
         node.override['dcos']['dcos_version'] = '1.11.1'
         node.override['dcos']['dcos_license_text'] = 'STUB'

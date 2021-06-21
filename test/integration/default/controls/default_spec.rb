@@ -103,7 +103,7 @@ end
 end
 
 describe yaml('/etc/rexray/config.yml') do
-  its(['rexray', 'modules', 'default-docker', 'disabled']) { should eq true }
+  its(%w(rexray modules default-docker disabled)) { should eq true }
 end
 
 # IPv4 (TCP + UDP)

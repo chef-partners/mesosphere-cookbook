@@ -30,7 +30,7 @@ module Dcos
       return 'https://downloads.dcos.io/dcos/EarlyAccess' if v.downcase == 'earlyaccess'
       if v.to_f >= 1.10
         return "https://downloads.mesosphere.com/dcos-enterprise/stable/#{v}" if dcos_enterprise?
-        return "https://downloads.dcos.io/dcos/stable/#{v}"
+        "https://downloads.dcos.io/dcos/stable/#{v}"
       else # stable or older releases
         return 'https://downloads.mesosphere.com/dcos-enterprise/stable/1.12.2' if dcos_enterprise?
         'https://downloads.dcos.io/dcos/stable'
@@ -39,5 +39,5 @@ module Dcos
   end
 end
 
-Chef::Recipe.send(:include, Dcos::Helpers)
+Chef::DSL::Recipe.send(:include, Dcos::Helpers)
 Chef::Resource.send(:include, Dcos::Helpers)

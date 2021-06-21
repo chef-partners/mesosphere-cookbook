@@ -1,5 +1,5 @@
 #
-# Cookbook Name:: dcos
+# Cookbook:: dcos
 # Spec:: cli
 #
 
@@ -8,7 +8,7 @@ require 'spec_helper'
 describe 'dcos::cli' do
   context 'Default behavior' do
     let(:chef_run) do
-      ChefSpec::SoloRunner.new(platform: 'centos', version: '7.3.1611').converge(described_recipe)
+      ChefSpec::SoloRunner.new(platform: 'centos', version: '7').converge(described_recipe)
     end
 
     it 'creates remote_file[/usr/local/bin/dcos]' do

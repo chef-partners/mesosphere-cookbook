@@ -1,8 +1,8 @@
 #
-# Cookbook Name:: dcos
+# Cookbook:: dcos
 # Recipe:: cli
 #
-# Copyright 2018 Chris Gianelloni
+# Copyright:: 2018 Chris Gianelloni
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
